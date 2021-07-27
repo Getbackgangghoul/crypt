@@ -1,4 +1,5 @@
  ModIDS = {
  [1571948116] = true, -- linux
+ [8770676] = true, -- zzz
 }
 return ModIDS
