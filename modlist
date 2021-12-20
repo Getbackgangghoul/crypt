@@ -12,9 +12,6 @@ linux = {
 
 diamonds = {
      160578797, -- dynamic
-     356366359, -- abi (temp for vid)
-     2060795041 -- dtbemi (temp for vid)
-     
 }
 
 --\\ Don't mess with anything below this
