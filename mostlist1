@@ -1,0 +1,64 @@
+ModIDS = {
+265839211,
+2855971707,
+1834900976,
+1267693109,
+2283651055,
+426774453,
+2726509543,
+659965910,
+2422912891,
+2647336396,
+2979593840,
+1112423310,
+99755783,
+1112423310,
+}
+
+BoxingChampion = {
+
+}
+
+linux = {
+    2422912891,
+}
+
+admin = {
+
+}
+
+--\\ Don't mess with anything below this
+function nameslol()
+    for _,Player in pairs(game:GetService('Players'):GetChildren()) do
+        if table.find(ModIDS, Player.UserId) then
+            if Player.Character then
+                if Player.Character.Parent.Name == 'Players' then
+                    Player.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[Mod]' .. Player.DisplayName)
+                end
+            end
+		elseif
+        table.find(BoxingChampion, Player.UserId) then
+            if Player.Character then
+                if Player.Character.Parent.Name == 'Players' then
+                    Player.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🥊]' .. Player.DisplayName)
+                end
+            end
+		elseif
+        table.find(linux, Player.UserId) then
+            if Player.Character then
+                if Player.Character.Parent.Name == 'Players' then
+                    Player.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🛠️]' .. Player.DisplayName)
+                end
+			end
+		elseif
+		table.find(admin, Player.UserId) then
+            if Player.Character then
+                if Player.Character.Parent.Name == 'Players' then
+                    Player.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🛠️]' .. Player.DisplayName)
+                end
+			end
+        end
+    end
+end
+local success,err = pcall(nameslol)
+return ModIDS
