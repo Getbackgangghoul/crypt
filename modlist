@@ -1,5 +1,5 @@
 ModIDS = {
-
+ 2422912891,
 }
 
 BoxingChampion = {
@@ -7,7 +7,7 @@ BoxingChampion = {
 }
 
 linux = {
-    2422912891,
+    1,
 }
 
 diamonds = {
