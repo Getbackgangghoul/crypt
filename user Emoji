@@ -1,27 +1,28 @@
-local Emojis = {
-    '2422912891/👑', 
+MODS = {
+    [69206894] = true;
 }
 
-function rarzonames()
-    for _,Player in pairs(game:GetService('Players'):GetChildren()) do
-        if game.Workspace.Players:FindFirstChild(Player.Name) then
-            if not Player.Character.UpperTorso:FindFirstChild('OriginalSize') then 
-                Player.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🔥]' .. Player.DisplayName)
+ADMIN = {
+    
+}
+
+--// Don't mess with anything below this
+function initiateNames()
+    game.Players.LocalPlayer.Character.UpperTorso:FindFirstChild('OriginalSize'):Destroy()
+    for _,v in pairs(game:GetService('Players'):GetPlayers()) do
+        if v.Character then
+            if not v.Character.UpperTorso:FindFirstChild('OriginalSize') then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[😎] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
             end
-        end 
-    end
-    for _,String in pairs(Emojis) do
-        local Split = string.split(String, '/')
-        local ID = tonumber(Split[1])
-        local Emoji = Split[2]
-        for _,Player in pairs(game:GetService('Players'):GetChildren()) do
-            if Player.UserId == ID then
-                if Player.Character then
-                    Player.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[' .. Emoji .. ']' .. Player.DisplayName)
-                end
-            end 
+            if MODS[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+            if ADMIN[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
         end
     end
 end
 
-local success,err = pcall(cryptnames)
+local successful, errored = pcall(initiateNames)
+return MODS
